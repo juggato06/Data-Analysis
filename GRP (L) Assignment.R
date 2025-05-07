@@ -56,3 +56,14 @@ df = df[!is.na(df$Ratings), ]
 
 # Check after cleaning dataset
 colSums(is.na(df))
+
+# Bar chart for Shipping Method
+ggplot(df, aes(x = Shipping_Method)) +
+  geom_bar(fill = "Blue")
+
+ggplot(df,aes(x = Ratings)) +
+  geom_bar(fill = "Yellow")
+
+ggplot(df,aes(x = Shipping_Method, fill = Ratings)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Ratings by Shipping Method", x = "Shipping Method", y = "Ratings")
